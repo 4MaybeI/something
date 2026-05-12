@@ -193,6 +193,11 @@ textarea {
   color: var(--navy-muted);
 }
 
+.section--accent .eyebrow,
+.contacts .eyebrow {
+  color: #b9c4d8;
+}
+
 .hero h1 {
   max-width: 820px;
   margin: 0;
