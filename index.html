@@ -419,25 +419,25 @@
             <span>Базовая</span>
             <strong>2 900 ₽</strong>
             <p>До 45 минут, устный разбор вопроса и краткий план действий.</p>
-            <a href="#request" class="button button--small">Заказать</a>
+            <a href="#price-modal" class="button button--small tariff-link" data-tariff="Базовая консультация - 2 900 ₽">Заказать</a>
           </article>
           <article class="price-table__featured">
             <span>Документы</span>
             <strong>5 900 ₽</strong>
             <p>До 60 минут, анализ до 10 страниц, рекомендации по правкам.</p>
-            <a href="#request" class="button button--small">Заказать</a>
+            <a href="#price-modal" class="button button--small tariff-link" data-tariff="Консультация с документами - 5 900 ₽">Заказать</a>
           </article>
           <article>
             <span>Срочная</span>
             <strong>7 900 ₽</strong>
             <p>В день обращения, при наличии свободного окна и материалов.</p>
-            <a href="#request" class="button button--small">Заказать</a>
+            <a href="#price-modal" class="button button--small tariff-link" data-tariff="Срочная консультация - 7 900 ₽">Заказать</a>
           </article>
           <article>
             <span>Бизнес-пакет</span>
             <strong>от 12 900 ₽</strong>
             <p>Разбор договора, оферты или претензии для ИП/ООО.</p>
-            <a href="#request" class="button button--small">Заказать</a>
+            <a href="#price-modal" class="button button--small tariff-link" data-tariff="Бизнес-пакет - от 12 900 ₽">Заказать</a>
           </article>
         </div>
 
@@ -490,5 +490,19 @@
         </div>
       </div>
     </footer>
+    <script>
+      document.querySelectorAll(".tariff-link").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const tariff = link.dataset.tariff;
+          const select = document.querySelector('select[name="tariff"]');
+          if (select && tariff) {
+            select.value = tariff;
+          }
+          location.hash = "price-modal";
+          document.getElementById("modal-order")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    </script>
   </body>
 </html>
