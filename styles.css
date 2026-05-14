@@ -201,7 +201,7 @@ textarea {
 .hero h1 {
   max-width: 820px;
   margin: 0;
-  font-size: clamp(40px, 5.8vw, 72px);
+  font-size: 4vw;
   line-height: 1;
   letter-spacing: -0.055em;
 }
@@ -982,10 +982,6 @@ textarea {
   .hero,
   .section {
     padding: 62px 0;
-  }
-
-  .hero h1 {
-    font-size: 40px;
   }
 
   .hero__lead,
